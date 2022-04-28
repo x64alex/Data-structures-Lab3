@@ -7,7 +7,7 @@
 using namespace std;
 
 
-PriorityQueue::PriorityQueue(Relation r):head{NULL}, relation{r}
+PriorityQueue::PriorityQueue(Relation r):head{-1}, relation{r},firstFree{1}
 {}
 
 /*
@@ -16,35 +16,46 @@ PriorityQueue::PriorityQueue(Relation r):head{NULL}, relation{r}
 * Average Case: Theta(n)
 * Total case: O(n)
 */
-void PriorityQueue::push(TElem e, TPriority p) {
+void PriorityQueue::push(TElem e, TPriority p)
+{
 	Element item(e,p);
 
-    Node* newNode = new Node();
-    newNode->data = item;
-    newNode->next =NULL;
+    Node newNode;
+    newNode.data = item;
+    newNode.next = -1;
 
-    if(this->head == NULL){
-        this->head = newNode;
-        this->head->next = NULL;
+    if(this->head == -1)
+    {
+        this->head = firstFree;
+        firstFree++;
+        this->nodes[this->head] = newNode;
     }
-    else {
-
-        if (relation(newNode->data.second, this->head->data.second)) {
-            newNode->next = head;
-            this->head = newNode;
+    else
+    {
+        if (relation(newNode.data.second, this->nodes[this->head].data.second)) {
+            newNode.next = head;
+            this->head = this->firstFree;
+            this->nodes[this->head] = newNode;
+            this->firstFree++;
         } else {
-            Node* iteratorNode;
+            int iteratorNode;
             iteratorNode = this->head;
 
-            while (iteratorNode->next != NULL &&
-                   relation(iteratorNode->next->data.second, newNode->data.second)) {
-                iteratorNode = iteratorNode->next;
+            while (this->nodes[iteratorNode].next != -1 &&
+                   relation(this->nodes[iteratorNode].data.second, newNode.data.second)) {
+                iteratorNode = this->nodes[iteratorNode].next;
             }
 
             // Either at the ends of the list
             // or at required position
-            newNode->next = iteratorNode->next;
-            iteratorNode->next = newNode;
+            Node n = this->nodes[iteratorNode];
+            cout<<n.data.first<<" "<<n.data.second<<"  "<<n.next<<endl;
+            n.next = this->firstFree;
+            this->nodes[iteratorNode].next = this->firstFree;
+            this->nodes[firstFree] = newNode;
+            this->firstFree++;
+
+            //iteratorNode->next = newNode;
         }
     }
 }
@@ -62,7 +73,7 @@ Element PriorityQueue::top() const {
         throw exception_ptr();
     }
 
-    return this->head->data;
+    return this->nodes[this->head].data;
 }
 
 /*
@@ -76,14 +87,9 @@ Element PriorityQueue::pop() {
     {
         throw exception_ptr();
     }
-
-    Element e;
-    Node* p = this->head;
-    e.first = this->head->data.first;
-    e.second = this->head->data.second;
-    this->head = this->head->next;
-    free(p);
-    return e;
+    Node p = this->nodes[this->head];
+    this->head = p.next;
+    return p.data;
 }
 
 /*
@@ -93,7 +99,7 @@ Element PriorityQueue::pop() {
 * Total case: Theta(1)
 */
 bool PriorityQueue::isEmpty() const {
-	return head == NULL;
+	return head == -1;
 }
 
 /*
@@ -103,39 +109,5 @@ bool PriorityQueue::isEmpty() const {
 * Total case: Theta(n)
 */
 PriorityQueue::~PriorityQueue() {
-	while(!isEmpty()){
-        Node* p = this->head;
-        this->head = this->head->next;
-        free(p);
-    }
+
 }
-
-/*
-* Best Case: Theta(1)
-* Worst Case: Theta(n)
-* Average Case: Theta(n)
-* Total case: O(n)
-*/
-TPriority PriorityQueue::IncreasePriority(TElem elem, TPriority newPriority) {
-    Node* iteratorNode;
-    TPriority oldPriority;
-
-    iteratorNode = this->head;
-
-    while (iteratorNode!= NULL && iteratorNode->data.first !=elem ) {
-        iteratorNode = iteratorNode->next;
-    }
-    if(iteratorNode!=NULL)
-    {
-        oldPriority = iteratorNode->data.first;
-        if(relation(newPriority,oldPriority)){
-            throw exception_ptr();
-        }
-        iteratorNode->data.second = newPriority;
-        return oldPriority;
-    }
-    else{
-        return -1;
-    }
-};
-

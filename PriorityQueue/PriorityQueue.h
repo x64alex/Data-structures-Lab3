@@ -16,14 +16,16 @@ typedef bool (*Relation)(TPriority p1, TPriority p2);
 
 struct Node {
     Element data;
-    struct Node* next;
+    int next;
 };
 
 
 class PriorityQueue {
 private:
-    Node * head;
+    Node nodes[10000];
     Relation relation;
+    int firstFree;
+    int head;
 
 public:
 	//implicit constructor
@@ -42,8 +44,6 @@ public:
 
 	//checks if the queue is empty
 	bool isEmpty() const;
-
-    TPriority IncreasePriority(TElem elem, TPriority newPriority);
 
 	//destructor
 	~PriorityQueue();

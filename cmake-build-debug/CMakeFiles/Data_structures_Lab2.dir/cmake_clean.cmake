@@ -1,16 +1,14 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/App.cpp.obj"
-  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/App.cpp.obj.d"
-  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ExtendedTest.cpp.obj"
-  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ExtendedTest.cpp.obj.d"
-  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/PriorityQueue.cpp.obj"
-  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/PriorityQueue.cpp.obj.d"
-  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ShortTest.cpp.obj"
-  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ShortTest.cpp.obj.d"
-  "Data_structures_Lab2.exe"
-  "Data_structures_Lab2.exe.manifest"
+  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/App.cpp.o"
+  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/App.cpp.o.d"
+  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ExtendedTest.cpp.o"
+  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ExtendedTest.cpp.o.d"
+  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/PriorityQueue.cpp.o"
+  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/PriorityQueue.cpp.o.d"
+  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ShortTest.cpp.o"
+  "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ShortTest.cpp.o.d"
+  "Data_structures_Lab2"
   "Data_structures_Lab2.pdb"
-  "libData_structures_Lab2.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

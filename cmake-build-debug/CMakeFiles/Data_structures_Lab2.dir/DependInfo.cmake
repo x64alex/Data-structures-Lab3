@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/alexc/Documents/GitHub/Data-structures-Lab3/PriorityQueue/App.cpp" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/App.cpp.obj" "gcc" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/App.cpp.obj.d"
-  "C:/Users/alexc/Documents/GitHub/Data-structures-Lab3/PriorityQueue/ExtendedTest.cpp" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ExtendedTest.cpp.obj" "gcc" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ExtendedTest.cpp.obj.d"
-  "C:/Users/alexc/Documents/GitHub/Data-structures-Lab3/PriorityQueue/PriorityQueue.cpp" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/PriorityQueue.cpp.obj" "gcc" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/PriorityQueue.cpp.obj.d"
-  "C:/Users/alexc/Documents/GitHub/Data-structures-Lab3/PriorityQueue/ShortTest.cpp" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ShortTest.cpp.obj" "gcc" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ShortTest.cpp.obj.d"
+  "/Users/a.cantor/Documents/GitHub/Data-structures-Lab3/PriorityQueue/App.cpp" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/App.cpp.o" "gcc" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/App.cpp.o.d"
+  "/Users/a.cantor/Documents/GitHub/Data-structures-Lab3/PriorityQueue/ExtendedTest.cpp" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ExtendedTest.cpp.o" "gcc" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ExtendedTest.cpp.o.d"
+  "/Users/a.cantor/Documents/GitHub/Data-structures-Lab3/PriorityQueue/PriorityQueue.cpp" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/PriorityQueue.cpp.o" "gcc" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/PriorityQueue.cpp.o.d"
+  "/Users/a.cantor/Documents/GitHub/Data-structures-Lab3/PriorityQueue/ShortTest.cpp" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ShortTest.cpp.o" "gcc" "CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ShortTest.cpp.o.d"
   )
 
 # Targets to which this target links.

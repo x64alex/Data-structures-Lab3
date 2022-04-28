@@ -87,6 +87,7 @@ void testAdd() {
 	assert(pq.top().second == -1000);
 
 	assert(pq.pop().second == -1000);
+    cout<<pq.top().second;
 	assert(pq.top().second == -999);
 }
 
@@ -160,11 +161,11 @@ void testRemove() {
 		assert(pq.pop().second == i);
 	}
 
-	
+
 	assert(pq.isEmpty() == true);
 }
 
-void testQuantity() {//add a lot of elements 
+void testQuantity() {//add a lot of elements
 	cout << "Test quantity" << endl;
 	PriorityQueue pq(rel2);
 	for (int i = 1; i <= 10; i++) {
@@ -180,31 +181,14 @@ void testQuantity() {//add a lot of elements
 	}
 }
 
-void TestIncreasePriority(){
-    cout << "Test increase priority" << endl;
-    PriorityQueue pq(rel2);
-    pq.push(1,1);
-    assert(pq.isEmpty() == false);
-    assert(pq.IncreasePriority(1,100)==1);
-    assert(pq.top().second ==100);
-    try {
-        pq.IncreasePriority(1,1);
-        assert(false);
-    }
-    catch (exception_ptr& e) {
-        assert(true);
-    }
-    assert(pq.IncreasePriority(2,1) == -1);
 
-}
 
 void testAllExtended() {
 	testCreate();
 	testAdd();
-	testRemove();	
+	testRemove();
 	testMix(rel2);
 	testMix(rel3);
 	testMix(rel4);
 	testQuantity();
-    TestIncreasePriority();
 }
