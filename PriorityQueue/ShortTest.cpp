@@ -40,12 +40,8 @@ void testAll() { //call each function and see if it exists
 	assert(pq.pop().second == 2);
 	assert(pq.top().second == 3);
 	assert(pq.pop().second == 3);
-    std::cout<<pq.top().second;
     assert(pq.top().second == 5);
 	assert(pq.pop().second == 5);
-    //pq.pop();
-    //pq.pop();
-    std::cout<<pq.top().second;
     assert(pq.top().second == 10);
 	assert(pq.pop().second == 10);
 	assert(pq.top().second == 12);

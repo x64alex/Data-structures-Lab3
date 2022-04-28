@@ -35,27 +35,33 @@ void PriorityQueue::push(TElem e, TPriority p)
         if (relation(newNode.data.second, this->nodes[this->head].data.second)) {
             newNode.next = head;
             this->head = this->firstFree;
-            this->nodes[this->head] = newNode;
+            this->nodes[this->firstFree] = newNode;
             this->firstFree++;
-        } else {
-            int iteratorNode;
-            iteratorNode = this->head;
+        }
+        else {
+            int iteratorNode= this->head;
 
             while (this->nodes[iteratorNode].next != -1 &&
                    relation(this->nodes[iteratorNode].data.second, newNode.data.second)) {
                 iteratorNode = this->nodes[iteratorNode].next;
             }
+            if(relation(this->nodes[iteratorNode].data.second, newNode.data.second))
+            {
+                // At the ends of the list
+                this->nodes[iteratorNode].next = this->firstFree;
+                this->nodes[this->firstFree] = newNode;
+                this->nodes[this->firstFree].next =-1;
+                this->firstFree++;
+            }
+            else {
+                // or at required position
+                Node n = this->nodes[iteratorNode];
+                newNode.next = this->firstFree;
+                this->nodes[iteratorNode] = newNode;
+                this->nodes[firstFree] = n;
+                this->firstFree++;
+            }
 
-            // Either at the ends of the list
-            // or at required position
-            Node n = this->nodes[iteratorNode];
-            cout<<n.data.first<<" "<<n.data.second<<"  "<<n.next<<endl;
-            n.next = this->firstFree;
-            this->nodes[iteratorNode].next = this->firstFree;
-            this->nodes[firstFree] = newNode;
-            this->firstFree++;
-
-            //iteratorNode->next = newNode;
         }
     }
 }

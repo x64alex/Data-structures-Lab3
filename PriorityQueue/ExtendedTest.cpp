@@ -69,26 +69,32 @@ void testAdd() {
 	for (int i = 0; i < 10; i++) {
 		pq.push(i, i);
 	}
-	assert(pq.isEmpty() == false);
+
+    assert(pq.isEmpty() == false);
 	for (int i = -10; i < 20; i++) {
 		pq.push(i, i);
 	}
+
+
 	assert(pq.isEmpty() == false);
 	for (int i = -100; i < 100; i++) {
 		pq.push(i, i);
 	}
-	assert(pq.isEmpty() == false);
+
+    assert(pq.isEmpty() == false);
 
 	for (int i = -1000; i <= 1000; i++) {
 		pq.push(i, i);
 	}
+
 	assert(pq.isEmpty() == false);
+
 	assert(pq.top().second != 1000);
 	assert(pq.top().second == -1000);
 
 	assert(pq.pop().second == -1000);
-    cout<<pq.top().second;
-	assert(pq.top().second == -999);
+
+    assert(pq.top().second == -999);
 }
 
 void testMix(Relation rel) {
@@ -145,6 +151,7 @@ void testRemove() {
 		pq.push(i, i);
 	}
 	assert(pq.top().second == -10);
+
 
 	//the elements are given in the order of their priority
 	for (int i = -10; i < 0; i++) {
