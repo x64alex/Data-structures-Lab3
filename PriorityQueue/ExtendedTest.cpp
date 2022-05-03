@@ -7,6 +7,11 @@
 
 using namespace std;
 
+bool rel1(TPriority p1, TPriority p2)
+{
+    return p1>p2;
+}
+
 bool rel2(TPriority p1, TPriority p2) {
 	if (p1 <= p2) {
 		return true;
@@ -188,7 +193,21 @@ void testQuantity() {//add a lot of elements
 	}
 }
 
+void testMerge()
+{
+    cout << "Test merge" << endl;
+    PriorityQueue pq1(rel1),pq2(rel1);
+    for (int i = 0; i < 10; i++) {
+        pq1.push(i, i);
+        pq2.push(i*i,i+1);
+    }
+    pq1.push(80,10);
+    pq1.merge(pq2);
+    assert(pq1.pop().first==81);
+    assert(pq1.pop().first==80);
+    assert(pq1.pop().first == 64);
 
+}
 
 void testAllExtended() {
 	testCreate();
@@ -198,4 +217,5 @@ void testAllExtended() {
 	testMix(rel3);
 	testMix(rel4);
 	testQuantity();
+    testMerge();
 }

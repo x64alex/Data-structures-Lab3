@@ -2,7 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Data_structures_Lab2"
+			"path" : "Data_structures_Lab3.exe"
+		},
+		{
+			"path" : "Data_structures_Lab3.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -42,7 +45,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk"
+					"fragment" : "-g"
 				},
 				{
 					"fragment" : "-std=gnu++14"
@@ -52,7 +55,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/Users/a.cantor/Documents/GitHub/Data-structures-Lab3/PriorityQueue"
+					"path" : "C:/Users/alexc/Documents/GitHub/Data-structures-Lab3/PriorityQueue"
 				}
 			],
 			"language" : "CXX",
@@ -73,7 +76,7 @@
 			]
 		}
 	],
-	"id" : "Data_structures_Lab2::@6890427a1f51a3e7e1df",
+	"id" : "Data_structures_Lab3::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -85,12 +88,16 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "Data_structures_Lab2",
-	"nameOnDisk" : "Data_structures_Lab2",
+	"name" : "Data_structures_Lab3",
+	"nameOnDisk" : "Data_structures_Lab3.exe",
 	"paths" : 
 	{
 		"build" : ".",

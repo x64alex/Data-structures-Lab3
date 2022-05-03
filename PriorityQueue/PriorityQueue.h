@@ -45,6 +45,9 @@ public:
 	//checks if the queue is empty
 	bool isEmpty() const;
 
+    //merges the two priority queues
+    void merge(PriorityQueue& pq);
+
 	//destructor
 	~PriorityQueue();
 

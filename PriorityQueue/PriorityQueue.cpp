@@ -110,9 +110,25 @@ bool PriorityQueue::isEmpty() const {
 
 /*
 * Best Case: Theta(n)
-* Worst Case: Theta(n)
-* Average Case: Theta(n)
-* Total case: Theta(n)
+* Worst Case: Theta(n^2)
+* Average Case: Theta(n^2)
+* Total case: O(n^2)
+*/
+void PriorityQueue::merge(PriorityQueue& pq) {
+    while(pq.head !=-1)
+    {
+        TElem e = pq.nodes[pq.head].data.first;
+        TPriority p = pq.nodes[pq.head].data.second;
+        this->push(e,p);
+        pq.head = pq.nodes[pq.head].next;
+    }
+}
+
+/*
+* Best Case: Theta(n)
+* Worst Case: Theta(1)
+* Average Case: Theta(1)
+* Total case: Theta(1)
 */
 PriorityQueue::~PriorityQueue() {
 
